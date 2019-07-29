@@ -1,0 +1,22 @@
+@layout('layout')
+
+@section('content')
+<div class="card mb-4 shadow-sm">
+    <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{packed_lunch.name}}</h4>
+    </div>
+    <div class="card-body">
+        <p><img src="{{ packed_lunch.image }}"></p>
+
+        <p><strong>Description:</strong> {{ packed_lunch.description }}}</p>
+
+        <p><strong>Ingredient List:</strong> {{ packed_lunch.ingredient_list }}}</p>
+
+        <p><strong>Price:</strong> {{ packed_lunch.price }}}</p>
+
+        @if(discount)
+        <p><strong>Discount:</strong> {{ packed_lunch.discount }}}</p>
+        @endif
+    </div>
+</div>
+@endsection

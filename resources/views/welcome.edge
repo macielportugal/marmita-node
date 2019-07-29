@@ -1,0 +1,25 @@
+@layout('layout')
+
+@section('content')
+
+@each(packed_lunch in packed_lunch_list)
+<div class="card mb-4 shadow-sm">
+  <div class="card-header">
+    <h4 class="my-0 font-weight-normal">{{packed_lunch.name}}</h4>
+  </div>
+  <div class="card-body">
+    <p><img src="{{ packed_lunch.image }}"></p>
+    
+    <p>{{ packed_lunch.description }}}</p>
+
+    <p><strong>Price:</strong> {{ packed_lunch.price }}}</p>
+
+    @if(discount)
+    <p><strong>Discount:</strong> {{ packed_lunch.discount }}}</p>
+    @endif
+
+    <a href="/{{ packed_lunch.id }}" class="btn btn-lg btn-block btn-outline-primary">Show</a>
+  </div>
+</div>
+@endeach
+@endsection
